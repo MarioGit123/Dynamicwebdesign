@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #boxm {
+            width: 800px;
+            height: 300px;
+            margin: auto;
+            background: pink;
+        }
+        ul{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+        }
+        input{
+            outline:none;
+        }
+        .content{
+            width:960px;
+            margin:0 auto;
+        }
+        .content ul:after{
+            content:'.';
+            display:block;
+            visibility: hidden;
+            height:0px;
+            clear:both;
+        }
+        .content ul li{
+            float:left;
+            width:25%;
+            box-sizing:border-box;
+            margin-bottom:5px;
+        }
+
+        .content img{
+            width:210px;
+        }
+
+        .content .buy{
+            width:80px;
+            text-align:center;
+            border:solid orange 1px;
+            border-radius:4px;
+        }
+
+        .content .price{
+            font:20px/1.4 tahoma;
+            color:red;
+            font-weight:bolder;
+        }
+
+        .content .name{
+            font-size:13px;
+            height:20px;
+        }
+
+        .header{
+            height:36px;
+            background:#f5f5f5;
+            margin-bottom:20px;
+            line-height:36px;
+        }
+
+        .header .login{
+            width:180px;
+            float:left;
+            color:red;
+            font-weight:bold;
+        }
+
+        .header .shopcart{
+            float:right;
+        }
+
+        .header .shopcart span{
+            font-weight:bold;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="content">
+        <div class="login"><%=info %></div>
+        <div class="shopcart">购物车<span><%=count %></span></div>
+    </div>
+</div>
+<div class="content">
+    <ul>
+
+        <li>
+            <img src="../imgs">
+            <div class="price"><span>￥</span></div>
+            <div class="name"></div>
+            <div class="buy" >购买</div>
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>

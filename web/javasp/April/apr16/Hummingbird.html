@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜂鸟网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #boxmother {
+            width: 1200px;
+            height: 594px;
+            /*background: pink;*/
+            margin: auto;
+        }
+
+        .boxleft {
+            width: 192px;
+            height: 594px;
+            float: left;
+            background: #333333;
+        }
+
+        .boxleft ul li {
+            list-style: none;
+            display: inline-block;
+            float: left;
+            width: 191px;
+            border-top: 1px #444 solid;
+            border-bottom: 1px #222 solid;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .boxleft ul li div {
+            width: 160px;
+            margin: auto;
+        }
+
+        .boxleft ul li div dl dt {
+            display: inline-block;
+            width: 160px;
+            height: 26px;
+            font: 14px/24px 'Microsoft YaHei';
+            color: #fff;
+            line-height: 26px;
+
+        }
+
+        .boxleft ul li div dl dd {
+            width: 100%;
+            height: 16px;
+            margin-top: 5px;
+            font: 12px/24px 'Microsoft YaHei';
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .boxright {
+            width: 979px;
+            float: right;
+            margin-top: 20px;
+            border: 1px #e9e9e9 solid;
+
+        }
+
+        .boxright ul li {
+            list-style: none;
+            display: inline-block;
+            float: left;
+            width: 323px;
+            height: 254px;
+            border: 1px #e9e9e9 solid;
+            border-left: 0;
+            border-top: 0;
+        }
+
+        .imgs {
+            width: 85px;
+            height: 60px;
+            margin: 20px 0 0 15px;
+            float: left;
+        }
+
+        .reference2Box {
+            width: 220px;
+            float: right;
+            height: 200px;
+        }
+
+        .reference2Box h2 {
+            display: block;
+            font: bolder 18px/60px 'Microsoft YaHei';
+            color: #999;
+            margin-block-start: 0.83em;
+            font-weight: bold;
+        }
+
+        .reference2Box span {
+            width: 110px;
+            float: left;
+            margin: 0 0 5px 0;
+            color: #333;
+            cursor: pointer;
+            font: 12px 'Microsoft YaHei';
+        }
+
+        .boxcenter {
+            width: 25px;
+            height: 543px;
+            float: left;
+            /*background: pink;*/
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .boxcenter div {
+            width: 239px;
+            height: 543px;
+            background: #ffffff;
+            display: none;
+            border: 1px solid black;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .boxcenter div ul li {
+            display: inline-block;
+            list-style: none;
+            width: 217px;
+            height: 110px;
+            float: left;
+            /*background: #a31525;*/
+            margin: 5px 10px;
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        .boxcenter div ul li > dl {
+            display: block;
+            width: 239px;
+            height: 26px;
+            font: 14px/24px 'Microsoft YaHei';
+        }
+
+        .boxcenter div ul li dd {
+            width: 100%;
+            height: 16px;
+            display: inline-block;
+            margin-top: 10px;
+            font: 12px 'Microsoft YaHei';
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .active {
+            width: 192px;
+            float: left;
+            background: #ffffff;
+            font: 14px/24px 'Microsoft YaHei';
+            color: #353535;
+        }
+
+        .active div dl dt {
+            display: inline-block;
+            width: 160px;
+            height: 26px;
+            font: 14px/24px 'Microsoft YaHei';
+            color: #353535 !important;
+            line-height: 26px;
+        }
+
+        .boxhead {
+            width: 100%;
+            height: 120px;
+            background: #020202;
+            float: left;
+        }
+
+        .boxhead > div {
+            width: 1200px;
+            height: 120px;
+
+            margin: auto;
+        }
+
+        .y-eq-logo {
+            height: 90px;
+            background: url(http://icon.fengniao.com/fn_product/icon.png) 0 -260px no-repeat;
+            font: 28px/105px 'Microsoft YaHei';
+            color: #fff;
+            padding: 0 0 0 110px;
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script>
+        $(function () {
+            $(".boxleft ul li").hover(function () {
+                var index = $(this).index();
+                console.log(index);
+                $(this).addClass("active");
+                $(".boxcenter div").hide();
+                $(".boxcenter div:eq(" + index + ")").show();
+            }, function () {
+                $(this).removeClass("active");
+                // $(".boxcenter div:eq("+index+")").hide();
+                // $(".boxcenter div").hide();
+                $(".boxcenter div").hide();
+
+
+            });
+
+            $(".boxright ul li").hover(function () {
+
+                $(this).css("border","1px solid red");
+
+            }, function () {
+                $(this).css("border","1px #e9e9e9 solid");
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="boxhead">
+    <div>
+        <div class="y-eq-logo"></div>
+    </div>
+</div>
+<div id="boxmother">
+    <div class="boxleft">
+        <ul>
+            <li>
+                <div>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd>单反相机 微单/单电相机</dd>
+                        <dd>便携数码相机</dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd>单反相机 微单/单电相机</dd>
+                        <dd>便携数码相机</dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd>单反相机 微单/单电相机</dd>
+                        <dd>便携数码相机</dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd>单反相机 微单/单电相机</dd>
+                        <dd>便携数码相机</dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd>单反相机 微单/单电相机</dd>
+                        <dd>便携数码相机</dd>
+                    </dl>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="boxcenter">
+        <div>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div>1
+            <ul>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div>2
+            <ul>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>数码相机</dt>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+                        <dd> 单反相机微单/单电相机</dd>
+
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="boxright">
+        <ul>
+            <li>
+                <div class="imgs">
+                    <img src="imgs/y_eq_index_icon_01.jpg">
+                </div>
+                <div class="reference2Box">
+                    <h2>
+                        数码相机
+                    </h2>
+                    <span>单反相机</span>
+                    <span>微单/单电相机</span>
+                    <span>便携数码相机</span>
+                    <span>中画幅相机</span>
+                    <span>数码后背</span>
+                    <span>数码旁轴</span>
+                    <span>佳能</span>
+                    <span>尼康</span>
+                    <span>索尼</span>
+                    <span>富士</span>
+                    <span>奥林匹斯</span>
+                    <span>宾得</span>
+                    <span>松下</span>
+                    <span>三星</span>
+                </div>
+            </li>
+            <li>
+                <div class="imgs">
+                    <img src="imgs/y_eq_index_icon_01.jpg">
+                </div>
+                <div class="reference2Box">
+                    <h2>
+                        数码相机
+                    </h2>
+                    <span>单反相机</span>
+                    <span>微单/单电相机</span>
+                    <span>便携数码相机</span>
+                    <span>中画幅相机</span>
+                    <span>数码后背</span>
+                    <span>数码旁轴</span>
+                    <span>佳能</span>
+                    <span>尼康</span>
+                    <span>索尼</span>
+                    <span>富士</span>
+                    <span>奥林匹斯</span>
+                    <span>宾得</span>
+                    <span>松下</span>
+                    <span>三星</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="imgs">
+                    <img src="imgs/y_eq_index_icon_01.jpg">
+                </div>
+                <div class="reference2Box">
+                    <h2>
+                        数码相机
+                    </h2>
+                    <span>单反相机</span>
+                    <span>微单/单电相机</span>
+                    <span>便携数码相机</span>
+                    <span>中画幅相机</span>
+                    <span>数码后背</span>
+                    <span>数码旁轴</span>
+                    <span>佳能</span>
+                    <span>尼康</span>
+                    <span>索尼</span>
+                    <span>富士</span>
+                    <span>奥林匹斯</span>
+                    <span>宾得</span>
+                    <span>松下</span>
+                    <span>三星</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="imgs">
+                    <img src="imgs/y_eq_index_icon_01.jpg">
+                </div>
+                <div class="reference2Box">
+                    <h2>
+                        数码相机
+                    </h2>
+                    <span>单反相机</span>
+                    <span>微单/单电相机</span>
+                    <span>便携数码相机</span>
+                    <span>中画幅相机</span>
+                    <span>数码后背</span>
+                    <span>数码旁轴</span>
+                    <span>佳能</span>
+                    <span>尼康</span>
+                    <span>索尼</span>
+                    <span>富士</span>
+                    <span>奥林匹斯</span>
+                    <span>宾得</span>
+                    <span>松下</span>
+                    <span>三星</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="imgs">
+                    <img src="imgs/y_eq_index_icon_01.jpg">
+                </div>
+                <div class="reference2Box">
+                    <h2>
+                        数码相机
+                    </h2>
+                    <span>单反相机</span>
+                    <span>微单/单电相机</span>
+                    <span>便携数码相机</span>
+                    <span>中画幅相机</span>
+                    <span>数码后背</span>
+                    <span>数码旁轴</span>
+                    <span>佳能</span>
+                    <span>尼康</span>
+                    <span>索尼</span>
+                    <span>富士</span>
+                    <span>奥林匹斯</span>
+                    <span>宾得</span>
+                    <span>松下</span>
+                    <span>三星</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="imgs">
+                    <img src="imgs/y_eq_index_icon_01.jpg">
+                </div>
+                <div class="reference2Box">
+                    <h2>
+                        数码相机
+                    </h2>
+                    <span>单反相机</span>
+                    <span>微单/单电相机</span>
+                    <span>便携数码相机</span>
+                    <span>中画幅相机</span>
+                    <span>数码后背</span>
+                    <span>数码旁轴</span>
+                    <span>佳能</span>
+                    <span>尼康</span>
+                    <span>索尼</span>
+                    <span>富士</span>
+                    <span>奥林匹斯</span>
+                    <span>宾得</span>
+                    <span>松下</span>
+                    <span>三星</span>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
